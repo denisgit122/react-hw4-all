@@ -3,9 +3,10 @@ import css from './Menu.module.css'
 const Menu = () => {
 return (
   <div className={css.menu}>
-      <NavLink to={'/'}>Todos</NavLink>
-      <NavLink to={'/albums'}>Albums</NavLink>
-      <NavLink to={'/comments'}>Comments</NavLink>
+      <NavLink className={css.Comments} to={'/'}>Todos</NavLink>
+      <NavLink className={css.Comments}  to={'/albums'}>Albums</NavLink>
+      <NavLink className={css.Comments}  to={'/comments'}>
+          <span >Comments</span></NavLink>
 
   </div>
 );

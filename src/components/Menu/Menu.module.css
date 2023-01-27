@@ -1,10 +1,27 @@
 .menu{
     display: flex;
-    width: 400px;
-    height: 100px;
+    width: 600px;
+    height: 60px;
     justify-content: space-between;
-    margin-left: 35%;
+    margin-left: 27%;
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.Comments{
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 2px solid hotpink;
+    transition: 2s;
 }
 .menu a[class='active']{
-    color: #61dafb;
+     color: #61dafb;
+ }
+.Comments:hover{
+    background: #61dafb;
 }
