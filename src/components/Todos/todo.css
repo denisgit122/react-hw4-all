@@ -1,0 +1,11 @@
+.todo{
+border: 2px solid black;
+    width: 200px;
+    margin-bottom: 5px;
+}
+.flex{
+display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}

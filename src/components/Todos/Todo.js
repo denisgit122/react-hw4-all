@@ -1,8 +1,15 @@
-const Todo = () => {
+import './todo.css'
+const Todo = ({todo}) => {
+    const {userId,id,title,completed}=todo
 return (
-  <div>
-   Todo
-  </div>
+    <div className={'todo'}>
+
+         <div>{userId}</div>
+         <div>{id}</div>
+         <div>{title}</div>
+         <div>{completed}</div>
+    </div>
+
 );
 };
 

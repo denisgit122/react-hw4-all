@@ -1,9 +1,12 @@
 import {Todos} from "../components/Todos/Todos";
 
+import './st.css'
 const TodosPage = () => {
-return (
-  <div>
-  <Todos/>
+
+  return (
+
+  <div className={'xxz'}>
+      <Todos/>
   </div>
 );
 };

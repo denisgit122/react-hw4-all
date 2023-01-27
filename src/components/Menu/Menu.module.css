@@ -1,0 +1,10 @@
+.menu{
+    display: flex;
+    width: 400px;
+    height: 100px;
+    justify-content: space-between;
+    margin-left: 35%;
+}
+.menu a[class='active']{
+    color: #61dafb;
+}
