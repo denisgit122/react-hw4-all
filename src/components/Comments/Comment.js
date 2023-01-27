@@ -7,7 +7,7 @@ const Comment = ({coment}) => {
     // console.log(navigate);
     const {postId,id,email,name,body}=coment
 return (
-  <div className={'box'}>
+  <div className={'boxe'}>
       <div>{postId}</div>
 
       <div>{id}</div>

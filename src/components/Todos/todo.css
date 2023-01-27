@@ -1,8 +1,18 @@
 .todo{
 border: 2px solid black;
     width: 200px;
+    height: 120px;
     margin-bottom: 5px;
+    display: block;
+    align-items: center;
 }
+.todo h3{
+   margin-left: 30%;
+}
+.todo p{
+    
+}
+
 .flex{
 display: flex;
     flex-wrap: wrap;

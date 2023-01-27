@@ -4,10 +4,10 @@ const Todo = ({todo}) => {
 return (
     <div className={'todo'}>
 
-         <div>{userId}</div>
-         <div>{id}</div>
-         <div>{title}</div>
-         <div>{completed}</div>
+         <h3>user Id:{userId}.</h3>
+         <h4>Id:{id}</h4>
+         <p>Title:{title}</p>
+         {/*<h2>completed-{completed}</h2>*/}
     </div>
 
 );

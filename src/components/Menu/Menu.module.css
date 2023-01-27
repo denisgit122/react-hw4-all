@@ -40,15 +40,17 @@ body{
     background: #61dafb;
     color: white;
     border-radius: 8px;
+    box-shadow: 7px 3px 6px 1px  #9b59b6  ;
 }
 .Comments:nth-child(2):hover{
     background: skyblue;
     color: white;
     border-radius: 8px;
+    box-shadow: 7px 3px 6px 1px #9b59b6  ;
 }
 .Comments:nth-child(3):hover{
-    box-shadow: 7px 7px;
-    background:cornflowerblue;
+    box-shadow: 7px 3px 6px 1px #9b59b6;
+    background: #3498db ;
     color: white;
     border-radius: 8px;
 }

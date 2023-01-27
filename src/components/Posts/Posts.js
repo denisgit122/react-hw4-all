@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {postss} from "../../configs/urls";
 import {Post} from "./Post";
-
+import './postSt.css'
 
 
 const Posts = ({postsId}) => {
