@@ -14,7 +14,7 @@ const Posts = ({postsId}) => {
     console.log(posts);
     return (
   <div>
-
+      {JSON.stringify(posts)}
   </div>
 );
 };
