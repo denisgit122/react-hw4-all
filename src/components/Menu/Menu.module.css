@@ -26,6 +26,7 @@ body{
     background-color:#34495e;
     list-style: none;
     margin-left: 1px;
+    border-radius: 7px;
 }
 .menu a [class='active']{
      color: #61dafb;
@@ -33,7 +34,22 @@ body{
  }
 
 .Comments:hover{
+
+}
+.Comments:nth-child(1):hover{
     background: #61dafb;
     color: white;
     border-radius: 8px;
 }
+.Comments:nth-child(2):hover{
+    background: skyblue;
+    color: white;
+    border-radius: 8px;
+}
+.Comments:nth-child(3):hover{
+    box-shadow: 7px 7px;
+    background:cornflowerblue;
+    color: white;
+    border-radius: 8px;
+}
+
