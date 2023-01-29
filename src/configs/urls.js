@@ -13,8 +13,11 @@ const album={
     albums:(limit=10,
             page=1
     )=>baseURL.get('/albums', {
-        _limit: limit,
-        _page: page
+        params:{
+            _limit: limit,
+            _page: page
+        }
+
     })
 }
 export {urls, baseURL, postss,album};
