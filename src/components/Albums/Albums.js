@@ -6,10 +6,12 @@ import './albumsSt.css'
 
 const Albums = () => {
  const [albums,setAlbums]=  useState([])
+
     useEffect(() => {
-baseURL.get(urls.albums).then(({data})=>setAlbums(data))
+urls.albums(10,1).then(({data})=>setAlbums(data))
 
     },[])
+
     // console.log(albums);
 return (
   <div className={'albums'}>
