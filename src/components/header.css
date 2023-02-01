@@ -1,0 +1,15 @@
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+
+}
+.head a{
+    margin-right: 30px;
+    text-decoration: none;
+    color: #282c34;
+}
+.head a[class='active']{
+    color: #61dafb;
+}
