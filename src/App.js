@@ -1,9 +1,11 @@
-const App = () => {
-return (
-  <div>
-   mll
-  </div>
-);
-};
+function App() {
+    return (
+        <div className="App">
 
-export {App};
+           kl
+
+        </div>
+    );
+}
+
+export default App;
