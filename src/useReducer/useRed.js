@@ -20,11 +20,12 @@ const reducer = (state,active) => {
 
         case 'doog':
             const [last]=state.dogs.slice(-1)
-            const id=last?last.id+1:0
+          const id= last?last.id+1:0
             return {...state, dogs:[...state.dogs,{id, Dog:active.payload}]}
 
         case 'delDog':
             const indD=state.dogs.findIndex(value => value.id===active.payload)
+            console.log(indD);
             state.dogs.splice(indD,1)
             return {...state}
 
