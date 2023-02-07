@@ -1,9 +1,13 @@
+
+import {Header} from "./components/Header";
+import {Users} from "./components/Users";
+
 function App() {
+
     return (
-        <div className="App">
-
-           kl
-
+        <div >
+            <Header/>
+            <Users/>
         </div>
     );
 }
