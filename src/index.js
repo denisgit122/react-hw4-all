@@ -5,13 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {setAppstore} from "./store/store";
 import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
 // import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const sore=setAppstore
 root.render(
+
     <Provider store={sore}>
-        <App />
+<BrowserRouter>
+    <App />
+</BrowserRouter>
+
     </Provider>
 
 );

@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {UserService} from "../configs/service/userService";
 
 const initialState={
@@ -8,6 +9,7 @@ const initialState={
     selectedUser:null
 
 }
+
 const getAll=createAsyncThunk(
     'userSlice/getAll',
     async (_,{rejectedWithValue} )=>{
@@ -15,7 +17,7 @@ const getAll=createAsyncThunk(
             const {data}=await UserService.getAll()
             return data
         }catch (e) {
-return rejectedWithValue(e.response.data)
+            return rejectedWithValue(e.response.data)
         }
     }
 )

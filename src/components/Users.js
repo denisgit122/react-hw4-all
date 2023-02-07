@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {UserService} from "../configs/service/userService";
+
 import {userAction} from "../slice/UserSlice";
 import {User} from "./User";
 
@@ -14,6 +14,7 @@ const Users = () => {
     },[])
 return (
   <div>
+      {/*<Header/>*/}
       {error && <h1>hhjjhj</h1>}
       {loading && <h2>loadingg</h2>}
       {users.map(user=><User key={user.id} user={user}/>)}

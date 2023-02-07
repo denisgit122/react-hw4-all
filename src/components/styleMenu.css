@@ -1,0 +1,11 @@
+.men{
+  display: flex;
+    justify-content: space-around;
+}
+.men a{
+   text-decoration: none;
+    color: #282c34;
+}
+.men a[class='active']{
+    color: #61dafb;
+}
