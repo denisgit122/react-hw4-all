@@ -8,20 +8,12 @@ import {carServ} from "../cervice/Urls";
 const Form = () => {
     const dispatch=useDispatch()
     const {cars}=useSelector(state => state.car)
-
     const {handleSubmit,register,reset}=useForm()
 
-    const subm = async (dat) => {
-        const {data}= await carServ.create(dat)
-
-        // console.log(data);
+    const subm = async (car) => {
+       await dispatch(carActions.creat({car}))
         reset()
     }
-    useEffect(() => {
-        dispatch(carActions.getAll())
-    },[dispatch])
-
-    // console.log(cars);
     return (
   <div>
 
@@ -32,7 +24,6 @@ const Form = () => {
 
        <button >create</button>
 
-       {cars.map(car=><Car key={car.id} car={car}/>)}
    </form>
   </div>
 );

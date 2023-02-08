@@ -8,23 +8,23 @@ const initialState={
 }
 const getAll=createAsyncThunk(
     'carSlice/getAll',
-    async (_,{rejectedWithValue})=>{
+    async (_,thunkAPI)=>{
         try {
             const {data}=await carServ.getAll()
             return data
         }catch (e) {
-            return rejectedWithValue(e.response.data)
+            return thunkAPI.rejectWithValue(e.response.data)
         }
 }
 )
 const creat=createAsyncThunk(
     'carSlice/create',
-    async (_,{rejectedWithValue})=>{
+    async ({car},thunkAPI)=>{
         try {
-            const {data}=await carServ.create()
-            return data
+            await carServ.create(car)
+            thunkAPI.dispatch(getAll())
         }catch (e) {
-            return rejectedWithValue(e.response.data)
+            return thunkAPI.rejectWithValue(e.response.data)
         }
     }
 )
