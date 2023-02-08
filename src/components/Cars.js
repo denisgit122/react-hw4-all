@@ -1,8 +1,12 @@
+import {Car} from "./Car";
+import {useSelector} from "react-redux";
+
 const Cars = () => {
+    const {cars}=useSelector(state => state.car)
 
 return (
   <div>
-   Cars
+      {cars.map(car=><Car key={car.id} car={car}/>)}
   </div>
 );
 };

@@ -19,7 +19,7 @@ const Form = () => {
     }
     useEffect(() => {
         dispatch(carActions.getAll())
-    },[cars])
+    },[dispatch])
 
     // console.log(cars);
     return (
