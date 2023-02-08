@@ -1,17 +1,19 @@
 import {carServ} from "../cervice/Urls";
+import {useDispatch, useSelector} from "react-redux";
+import {carActions} from "../redux/carSlice";
 
 const Car = ({car}) => {
+    const dispatch=useDispatch()
     const {id,brand,year,price}=car
-    const x = () => {
-carServ.delete(id)
-    }
+
+
 return (
   <div>
       <h4>{id}</h4>
       <div>{brand}</div>
       <div>{year}</div>
       <div>{price}</div>
-      <button onClick={()=>x()}>delete</button>
+      <button onClick={()=>dispatch(carActions.delet({id}))}>delete</button>
 
 
   </div>

@@ -29,6 +29,18 @@ const creat=createAsyncThunk(
     }
 )
 
+const delet=createAsyncThunk(
+    'carSlice/delete',
+    async ({id},thunkAPI)=>{
+        try {
+            await carServ.delete(id)
+            thunkAPI.dispatch(getAll())
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+)
+
 const carSlice=createSlice({
     name:'carSlice',
     initialState,
@@ -44,6 +56,7 @@ const carSlice=createSlice({
 const {reducer:carReducer}=carSlice
 const carActions={
     getAll,
-    creat
+    creat,
+    delet
 }
 export {carActions,carReducer,carSlice}
