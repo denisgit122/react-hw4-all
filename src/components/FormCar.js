@@ -1,9 +1,13 @@
 import {useForm} from "react-hook-form";
+import {carActions} from "../redux/carSlise/carSlice";
+import {useDispatch} from "react-redux";
 
 const FormCar = () => {
-    const {handleSubmit,reset,register}=useForm()
+     const {handleSubmit,reset,register}=useForm()
+     const dispatch=useDispatch()
 
-   const submit = (data) => {
+   const submit = async (data) => {
+       await dispatch(carActions.create({data}))
        console.log(data);
        reset()
    }

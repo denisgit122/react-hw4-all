@@ -18,12 +18,48 @@ const getAll=createAsyncThunk(
 
     }
 )
+const create=createAsyncThunk(
+    'carSlice/create',
+    async ({data},thunkAPI)=>{
+        try {
+            await carServ.create(data)
+            thunkAPI.dispatch(getAll())
+        }catch (e) {
+            return thunkAPI.fulfillWithValue(e.response.data)
+        }
+
+    }
+)
+const delet=createAsyncThunk(
+    'carSlice/delet',
+    async ({id},thunkAPI)=>{
+        try {
+            await carServ.delete(id)
+            thunkAPI.dispatch(getAll())
+        }catch (e) {
+            return thunkAPI.fulfillWithValue(e.response.data)
+        }
+
+    }
+)
+
 
 const carSlice= createSlice({
     name:'carSlice',
     initialState,
     reducers:{
     
-    }
-;`S`
-})\
+    },
+    extraReducers:{
+        [getAll.fulfilled]:(state,action)=>{
+            state.cars=action.payload
+        }}
+
+})
+const{reducer:carReducer} =carSlice
+const carActions={
+    getAll,
+    create,
+    delet
+}
+export {carActions,carReducer,carSlice}
