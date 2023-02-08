@@ -13,6 +13,7 @@ return (
       <div>{brand}</div>
       <div>{year}</div>
       <div>{price}</div>
+      <button onClick={()=>dispatch(carActions.setCar(car))}>updata</button>
       <button onClick={()=>dispatch(carActions.delet({id}))}>delete</button>
 
 

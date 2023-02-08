@@ -3,6 +3,7 @@ import {carServ} from "../cervice/Urls";
 
 const initialState={
     cars:[],
+    update:null,
     loading:null
 
 }
@@ -41,11 +42,25 @@ const delet=createAsyncThunk(
     }
 )
 
+const update=createAsyncThunk(
+    'carSlice/update',
+    async ({id,car},thunkAPI)=>{
+        try {
+            await carServ.updateId(id,car)
+            thunkAPI.dispatch(getAll())
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+)
+
 const carSlice=createSlice({
     name:'carSlice',
     initialState,
     reducers:{
-
+setCar:(state, action)=>{
+    state.update=action.payload
+}
     },
     extraReducers:{
         [getAll.fulfilled]:(state,action)=>{
@@ -53,10 +68,12 @@ const carSlice=createSlice({
         }
     }
 })
-const {reducer:carReducer}=carSlice
+const {reducer:carReducer , actions:{setCar}}=carSlice
 const carActions={
     getAll,
     creat,
-    delet
+    delet,
+    setCar,
+    update
 }
 export {carActions,carReducer,carSlice}
