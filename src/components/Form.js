@@ -2,8 +2,6 @@ import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {carActions} from "../redux/carSlice";
-import {Car} from "./Car";
-import {carServ} from "../cervice/Urls";
 
 const Form = () => {
     const dispatch=useDispatch()
