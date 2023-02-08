@@ -46,7 +46,7 @@ const update=createAsyncThunk(
     'carSlice/update',
     async ({id,car},thunkAPI)=>{
         try {
-            await carServ.updateId(id,car)
+            await carServ.updateId(id,car )
             thunkAPI.dispatch(getAll())
         }catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)

@@ -8,11 +8,6 @@ const Form = () => {
     const { update}=useSelector(state => state.car)
     const {handleSubmit,register,reset,setValue}=useForm()
 
-    const subm = async (car) => {
-       await dispatch(carActions.creat({car}))
-        reset()
-    }
-
     useEffect(() => {
         if (update){
             setValue('brand',update.brand,{shouldValidate:true})
@@ -21,10 +16,14 @@ const Form = () => {
         }
     },[update])
 
-    const updat=async (car)=>{
-await dispatch(carActions.update({id:update.id, car}))
+    const subm = async (car) => {
+        await dispatch(carActions.creat({car}))
         reset()
-        console.log(car);
+    }
+
+    const updat=async (car)=>{
+            await dispatch(carActions.update({id:update.id, car}))
+        reset()
     }
 
     return (

@@ -6,6 +6,7 @@ import {carActions} from "../redux/carSlice";
 const Cars = () => {
     const dispatch=useDispatch()
     const {cars}=useSelector(state => state.car)
+
     useEffect(() => {
         dispatch(carActions.getAll())
     },[dispatch])
