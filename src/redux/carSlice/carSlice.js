@@ -69,6 +69,17 @@ setCar:(state, action)=>{
         builder
             .addCase(getAll.fulfilled,(state, action)=>{
                 state.cars=action.payload
+                state.loading=false
+            })
+            .addDefaultCase((state, action) => {
+             const [actioStatus]=  action.type.split('/').slice(-1)
+
+                if (actioStatus==='pending'){
+                    state.loading=true
+
+                }else {
+                    state.loading=false
+                }
             })
 
 })
