@@ -1,4 +1,3 @@
-export * from './Car'
-export * from './Header'
-export * from './Cars'
-export * from './FormCar'
+export * from './Form/form'
+export * from './Cars/Cars'
+export * from './Car/Car'
