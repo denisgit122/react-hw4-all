@@ -1,23 +1,22 @@
 import {useForm} from "react-hook-form";
 import {authServ} from "../../services";
+import {carAction} from "../../redux/carSlice/carSlice";
 
 const LoginPage = () => {
 
-    const {handleSubmit,reset,register}=useForm()
-    const submit = async (userCred)=>{
-    //    нам труба сервіси authServ куди ми маємо передавати userCred
+    const {handleSubmit,register}=useForm()
+    const submit = async (userCred) =>{
+        //    нам труба сервіси authServ куди ми маємо передавати userCred
     //    отримані дані відправляємо на сервер
 
         try {
-            const {data}=await authServ.login(userCred)
+          const {data} = await authServ.login(userCred);
             console.log(data);
         }catch (e) {
-                console.log(e.response.data)
-
-
+                console.log(e.response.data);
         }
 
-    }
+    };
 return (
     <div>
         <div>
