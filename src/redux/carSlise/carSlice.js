@@ -9,10 +9,10 @@ const initialState =  {
 const getAll=createAsyncThunk(
     'carSlice/getAll',
     async (_,thunkAPI)=>{
-        try {
-            const {data}=await carServ.getAll()
+        try{
+            const{data}=await carServ.getAll()
             return data
-        }catch (e) {
+        }catch(e) {
             return thunkAPI.fulfillWithValue(e.response.data)
         }
 

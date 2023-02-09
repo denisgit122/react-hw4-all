@@ -15,13 +15,11 @@ const Cars = () => {
 return (
     <div>
         <div>
-            {cars.map(car => <Car key={car.id} car={car}/>)}
+            {/*{cars.map(car=> console.log(car))}*/}
+            {cars.map(car =><Car key={car.id} car={car}/>)}
         </div>
 
     </div>
-
-
-
 );
 };
 

@@ -5,6 +5,7 @@ const CarsPage = () => {
 return (
   <div>
       <FormCar/>
+      <hr/>
       <Cars/>
   </div>
 );
