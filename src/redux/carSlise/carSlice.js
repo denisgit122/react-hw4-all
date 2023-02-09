@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {carServ} from "../../service/urls";
 
 const initialState =  {
-    cars:[],
+    cars: [] ,
     loading:null
 }
 
@@ -50,10 +50,15 @@ const carSlice= createSlice({
     reducers:{
     
     },
-    extraReducers:{
-        [getAll.fulfilled]:(state,action)=>{
-            state.cars=action.payload
-        }}
+     extraReducers:builder =>
+         builder
+             .addCase(getAll.fulfilled,(state, action)=>{
+                 state.cars=action.payload
+             })
+    // {
+    //     [getAll.fulfilled]:(state,action)=>{
+    //         state.cars=action.payload
+    //     }}
 
 })
 const{reducer:carReducer} =carSlice

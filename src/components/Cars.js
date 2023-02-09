@@ -6,15 +6,22 @@ import {Car} from "./Car";
 const Cars = () => {
     const dispatch=useDispatch()
     const {cars}=useSelector(state => state.car)
+    console.log(cars);
 
-    useEffect(() => {
+    useEffect( () => {
         dispatch(carActions.getAll())
     },[dispatch])
 
 return (
-  <div>
-      {cars.map(car=> <Car key={car.id} car={car}/>)}
-  </div>
+    <div>
+        <div>
+            {cars.map(car => <Car key={car.id} car={car}/>)}
+        </div>
+
+    </div>
+
+
+
 );
 };
 

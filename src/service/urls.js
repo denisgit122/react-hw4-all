@@ -1,6 +1,7 @@
 import {create} from "axios";
 import {base, urls} from "../service/base";
 
+
 const carServ={
     getAll:()=> base.get(urls.cars),
     create:(newCar)=>base.post(urls.cars,newCar),
