@@ -9,7 +9,7 @@ const LoginPage = () => {
     //    отримані дані відправляємо на сервер
 
         try {
-            const {data}=await authServ.login({userCred})
+            const {data}=await authServ.login(userCred)
             console.log(data);
         }catch (e) {
                 console.log(e.response.data)
