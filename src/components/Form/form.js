@@ -13,13 +13,15 @@ const Form = () => {
         const dispatch=useDispatch()
 
         const {carsUpd}= useSelector(state => state.cars)
-    if (carsUpd){
-        setValue('brand',carsUpd.brand, {shouldValidate:true})
-        setValue('price',carsUpd.price, {shouldValidate:true})
-        setValue('year',carsUpd.year, {shouldValidate:true})
 
-    }
-    useEffect(() => {},[carsUpd])
+    useEffect(() => {
+        if (carsUpd){
+            setValue('brand',carsUpd.brand, {shouldValidate:true})
+            setValue('price',carsUpd.price, {shouldValidate:true})
+            setValue('year',carsUpd.year, {shouldValidate:true})
+
+        }
+    },[carsUpd])
 
     const sub= async (car)=>{
         await dispatch(carAction.create({car}))
@@ -27,6 +29,7 @@ const Form = () => {
     }
     const update = async (car) => {
 await dispatch(carAction.update({id:carsUpd.id,car}))
+        reset()
     }
     return (
   <div>

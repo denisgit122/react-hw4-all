@@ -16,8 +16,9 @@ return (
       <div>{price}</div>
 
       <div>{year}</div>
-
+{/*<button>upDade</button>*/}
       <button onClick={()=>dispatch(carAction.setCar(car))}>update</button>
+
       <button onClick={()=>dispatch(carAction.delet({id}))}>delete</button>
   </div>
 );
