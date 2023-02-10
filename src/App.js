@@ -2,8 +2,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 
 import {AuthRequireLayout, MainLoyout} from "./Layout";
 import {CarsPage, LoginPage, RegisterPage} from "./pages";
-
-function App() {
+ const App=()=> {
 return(
    <Routes>
        <Route path={'/'} element={<MainLoyout/>}>

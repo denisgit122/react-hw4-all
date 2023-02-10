@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter} from "react-router-dom";
+//модифікація
+import {unstable_HistoryRouter as BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {setStore} from "./redux/store/store";
+import {history} from "./services";
 
 
 
@@ -15,7 +17,7 @@ const store=setStore()
 root.render(
 
 <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter history={history}>
         <App />
     </BrowserRouter>
 </Provider>
