@@ -30,10 +30,12 @@ const nesUser=new user('max',21, 'male')
 console.log(nesUser);
 
 
+
 const test=(a:number,b:number)=>{
     return a + b
 }
 console.log(test(1, 2));
+
 
 
 const test2=(a:number,b:number):void=>{
